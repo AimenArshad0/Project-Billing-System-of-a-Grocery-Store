@@ -4,11 +4,6 @@ public class BillingSystem
     static Scanner console = new Scanner (System.in);
     public static void main (String[]args)
     {
-        System.out.println("======Billing System of a Grocery Store======");
-
-        //Login menu called here
-        //Login menu (should be a method so that it can be called in the main menu)
-
         login();
 
         int choice;
@@ -54,14 +49,71 @@ public class BillingSystem
 
     public static void login()
     {
-        System.out.println("------Login------");
-        // eman's part 
+         final String SYSTEM_ID = "admin";     
+        final String SYSTEM_PASSWORD = "1234"; 
+
+        int attempts = 0;
+        boolean loggedIn = false;
+
+        while (attempts < 3) {
+
+            System.out.println("\n==== Billing Management System Login ====");
+            System.out.print("Enter Login ID: ");
+            String id = console.next();
+
+            System.out.print("Enter Password: ");
+            String pass = console.next();
+
+            if (id.equals(SYSTEM_ID) && pass.equals(SYSTEM_PASSWORD)) {
+                System.out.println("\nLogin Successful!");
+                loggedIn = true;
+                break;
+            } else {
+                attempts++;
+                System.out.println("\nIncorrect ID or Password. Attempts left: " + (3 - attempts));
+            }
+        }
+
+        if (!loggedIn) {
+            System.out.println("\n3 unsuccessful attempts. System locked.");
+            System.out.println("Exiting program...");
+            System.exit(0); // closes the program
+        }
     }
     
     public static void inventory()
     {
-        System.out.println("------Inventory Menu------");
-        //inventory method eman's part
+        int choice;
+
+        do {
+            System.out.println("\n=== Inventory Menu ===");
+            System.out.println("1. Entry for New Product");
+            System.out.println("2. Price Alteration");
+            System.out.println("3. View All Items");
+            System.out.println("4. Restocking");
+            System.out.println("5. Return to Main Menu");
+            System.out.println("6. Exit");
+            System.out.print("Enter choice: ");
+            choice = console.nextInt();
+
+            switch (choice) {
+                case 1: System.out.println("Add new product here..."); 
+			break;
+                case 2: System.out.println("Price alteration here..."); 
+			break;
+                case 3: System.out.println("View all items here..."); 
+			break;
+                case 4: System.out.println("Restocking here..."); 
+			break;
+                case 5: System.out.println("Returning to Main Menu..."); 
+                return;
+                case 6: System.out.println("Exiting system..."); 
+			    System.exit(0);
+                default: System.out.println("Invalid choice.");
+            }
+
+        }while (choice != 5);
+    
     }
 
     public static void billing()
