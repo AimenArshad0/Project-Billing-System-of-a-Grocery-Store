@@ -4,12 +4,10 @@ public class BillingSystem
     static Scanner console = new Scanner (System.in);
     public static void main (String[]args)
     {
-<<<<<<< HEAD
-        //my part
-=======
->>>>>>> 1bf0d873d12d7363a3b2925239a68b9ee5494289
+        //eman's part
         login();
 
+        //aimen's part
         int choice;
         char ch;
         do
@@ -24,16 +22,16 @@ public class BillingSystem
             switch(choice)
             {
                 case 1: 
-                    inventory();
-                    break;
+                        inventory();
+                        break;
                 case 2:
-                    billing();
-                    break;
+                        billing();
+                        break;
                 case 3:
-                    login();
-                    break;
+                        login();
+                        break;
                 default:
-                    System.out.println("Invalid Input!");
+                        System.out.println("Invalid Input!");
             }
 
             System.out.println("Do you want to continue? (y/n)");
@@ -46,11 +44,7 @@ public class BillingSystem
     //eman's part
     public static void login()
     {
-<<<<<<< HEAD
         final String SYSTEM_ID = "admin";     
-
-         final String SYSTEM_ID = "admin";     
->>>>>>> 1bf0d873d12d7363a3b2925239a68b9ee5494289
         final String SYSTEM_PASSWORD = "1234"; 
 
         int attempts = 0;
@@ -117,43 +111,7 @@ public class BillingSystem
     
     }
 
-    //eman's part
-    public static void inventory()
-    {
-        int choice;
-
-        do {
-            System.out.println("\n=== Inventory Menu ===");
-            System.out.println("1. Entry for New Product");
-            System.out.println("2. Price Alteration");
-            System.out.println("3. View All Items");
-            System.out.println("4. Restocking");
-            System.out.println("5. Return to Main Menu");
-            System.out.println("6. Exit");
-            System.out.print("Enter choice: ");
-            choice = console.nextInt();
-
-            switch (choice) {
-                case 1: System.out.println("Add new product here..."); 
-			break;
-                case 2: System.out.println("Price alteration here..."); 
-			break;
-                case 3: System.out.println("View all items here..."); 
-			break;
-                case 4: System.out.println("Restocking here..."); 
-			break;
-                case 5: System.out.println("Returning to Main Menu..."); 
-                return;
-                case 6: System.out.println("Exiting system..."); 
-			    System.exit(0);
-                default: System.out.println("Invalid choice.");
-            }
-
-        }while (choice != 5);
-    
-    }
-
-    //my part
+    //aimen's part
     public static void billing()
     {
         System.out.println("------Billing Menu------");
